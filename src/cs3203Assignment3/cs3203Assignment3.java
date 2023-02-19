@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class cs3203Assignment3 {
 
 	public static void main(String[] args) {
+		//String prompt = new String();
+		
+		int answer = -1;
+		
 		int[] array = new int[5];
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter your list");
@@ -13,16 +17,43 @@ public class cs3203Assignment3 {
 			array[i] = in.nextInt();
 		}
 		
-		makeList(array);
+		System.out.print("Enter '1' for Addition. Enter '2' for Multiplication.");
 		
-		System.out.print("The list is " + makeList(array) + " after adding everything.");
+		
+		
+		while (answer == -1 || answer != 1 || answer != 2) {
+			answer = in.nextInt();
+			if (answer == 1) {
+				System.out.print("The list is " + makeListAdd(array) + " after adding everything.");
+			}
+			else if (answer == 2) {
+				System.out.print("The list is " + makeListMult(array) + " after multipling everything.");
+			}
+			else {
+				System.out.print("Try again, idiot.");
+			}
+			
+		}
+		
+		
+		
+		
+		
 		
 	}
 	
-	static int makeList(int[] array) {
+	static int makeListAdd(int[] array) {
 		int total = 0;
 		for(int i = 0; i < array.length; i++) {
 			total += array[i];
+		}
+		return total;
+	}
+	
+	static int makeListMult(int[] array) {
+		int total = array[0];
+		for(int i = 0; i < array.length - 1; i++) {
+			total = total * array[i+1];
 		}
 		return total;
 	}
