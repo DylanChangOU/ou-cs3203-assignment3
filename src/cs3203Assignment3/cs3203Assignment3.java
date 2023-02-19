@@ -8,8 +8,10 @@ public class cs3203Assignment3 {
 		//String prompt = new String();
 		
 		int answer = -1;
+		
 		//	This is here just for Number 3
-
+		// 	Already did number 6, so this is for number 6 commit.
+		
 		int[] array = new int[5];
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter your list");
